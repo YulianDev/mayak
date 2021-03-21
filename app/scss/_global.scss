@@ -1,0 +1,118 @@
+
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    @extend %nuni-400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $default;
+  }
+  
+  .main {
+    flex-grow: 1;
+  }
+  
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 2em;
+    line-height: 2.4em;
+    letter-spacing: 0.06rem;
+    @extend %muli-700;
+    color: $accent;
+    text-align: center;
+    padding-bottom: 40px;
+    position: relative;
+  }
+
+  .main-title {
+    font-size: 2.5em;
+    line-height: 3em;
+    letter-spacing: 0.06rem;
+    color: $accent;
+    @extend %muli-700;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  .more-link {
+    display: inline-block;
+    padding: 20px 25px;
+    background-color: $accent;
+    border-radius: 30px;
+    color: #fff;
+    letter-spacing: 0.14rem;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border: 1px solid $accent;
+      border-radius: 30px;
+      transform: translate(-10px, -10px);
+      transition: all .4s;
+    }
+    &:hover::before {
+      transform: translate(0, 0);
+      box-shadow: rgb(45, 190, 96) 0px 20px 30px -10px;
+    } 
+  }
+
+  .breadcrumbs {
+    padding: 20px 0;
+    &__list {
+      display: flex;
+    }
+    &__item {
+      position: relative;
+      padding-right: 20px;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 15px;
+        background-image: url('../images/angle-right-icon.svg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      &:last-child {
+        .breadcrumbs__link {
+          color: $accent;
+        }
+        &::after {
+          display: none;
+        }
+      }
+    }
+    &__item + .breadcrumbs__item {
+      margin-left: 5px;
+    }
+    &__link {
+      color: $link-color;
+      font-weight: 700;
+      transition: all .5s;
+      svg {
+        vertical-align: sub;
+      }
+      &:hover {
+        color: $accent;
+      }
+    }
+  }

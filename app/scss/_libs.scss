@@ -1,0 +1,72 @@
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+
+
+.activity {
+    .slick-track {
+        display: flex !important;
+    }
+    .slick-slide {
+        margin: 20px;
+        height: auto;
+        display: flex;
+    }
+    .slick-arrow {
+        position: absolute;
+        font-size: 0;
+        background-color: transparent;
+        border: none;
+        background-image: url('../images/arrow-circle-right-solid.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 25px;
+        height: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        cursor: pointer;
+        outline: transparent;
+        opacity: .7;
+        transition: all .5s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .slick-next {
+        right: -30px;
+    }
+    .slick-prev {
+        left: -30px;
+        background-image: url('../images/arrow-circle-left-solid.svg');
+    }
+}
+
+.recreation {
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    .slick-dots li {
+        font-size: 0;
+        width: 12px;
+        height: 12px;
+    }
+    .slick-dots li + li {
+        margin-left: 10px;
+    }
+    .slick-dots button {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: $link-color;
+        border-radius: 50%;
+        cursor: pointer;
+        outline: transparent;
+        transition: all .5s;
+    }
+    .slick-active button{
+        background-color: $accent;
+    }
+}
+
