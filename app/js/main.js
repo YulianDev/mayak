@@ -50,16 +50,26 @@ let map;
 let contactMap;
 
 function initRecreationMap() {
+  const uluru = { lat: 45.52232881085169, lng: 29.6357916676683 };
   map = new google.maps.Map(document.querySelector(".recreation__location-map"), {
-    center: { lat: 45.52232881085169, lng: 29.6357916676683 },
+    center: uluru,
     zoom: 16,
+  });
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
   });
 };
 
 function initContactMap() {
+    const uluru = { lat: 45.47233956840752, lng: 29.25397999259441 };
     contactMap = new google.maps.Map(document.querySelector(".contact__map"), {
-    center: { lat: 45.47233956840752, lng: 29.25397999259441 },
+    center: uluru,
     zoom: 16,
+  });
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: contactMap,
   });
 }
 
@@ -70,10 +80,26 @@ const menuIcon = document.querySelector('.menu__icon');
 const menuList = document.querySelector('.menu__list');
 if(menuIcon) {
   menuIcon.addEventListener('click', function(e) {
-    document.body.classList.toggle('lock');
-    menuIcon.classList.toggle('menu__icon--active');
-    menuList.classList.toggle('menu__list--active');
+    toogleMenu();
   });
+}
+
+/* Check click out of menu */
+document.addEventListener('click', (e) => {
+  let target = e.target;
+  let isMenu = target == menuList || menuList.contains(target);
+  let isMenuBtn = target == menuIcon;
+  let menuActive = menuList.classList.contains('menu__list--active');
+
+  if(!isMenu && !isMenuBtn && menuActive) {
+    toogleMenu();
+  }
+});
+
+function toogleMenu() {
+  document.body.classList.toggle('lock');
+  menuIcon.classList.toggle('menu__icon--active');
+  menuList.classList.toggle('menu__list--active');
 }
 
 /* Check device */
@@ -104,7 +130,7 @@ const scrollLink = document.querySelector('.scroll-top__link');
 let headerHeight = document.querySelector('.header').offsetHeight;
 
 
-/* Link state changing */
+/* Link state changing for mobile*/
 if(isMobile.any()) {
   scrollLink.classList.remove('scroll-top__link--hover');
   scrollLink.classList.add('scroll-top__link--focus');
@@ -128,6 +154,5 @@ if(scrollLink) {
       top: 0, 
       behavior: 'smooth'
     });
-    e.blur();
   });
 }
