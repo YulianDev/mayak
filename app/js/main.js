@@ -7,6 +7,20 @@ $(function(){
         autoplaySpeed: 2000,
         pauseOnHover: true,
         adaptiveHeight: true,
+        responsive:[
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
+          {
+            breakpoint: 570,
+            settings: {
+              slidesToShow: 1,
+            }
+          },
+        ]
     });
     $('.recreation__tab-slider').slick({
         dots: true,
@@ -28,6 +42,10 @@ $(function(){
       });
 });
 
+
+
+
+/* Map init */
 let map;
 let contactMap;
 
@@ -42,5 +60,74 @@ function initContactMap() {
     contactMap = new google.maps.Map(document.querySelector(".contact__map"), {
     center: { lat: 45.47233956840752, lng: 29.25397999259441 },
     zoom: 16,
+  });
+}
+
+
+/* Menu-burger */
+
+const menuIcon = document.querySelector('.menu__icon');
+const menuList = document.querySelector('.menu__list');
+if(menuIcon) {
+  menuIcon.addEventListener('click', function(e) {
+    document.body.classList.toggle('lock');
+    menuIcon.classList.toggle('menu__icon--active');
+    menuList.classList.toggle('menu__list--active');
+  });
+}
+
+/* Check device */
+  const isMobile = {
+    Android: function() {
+      return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+      return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+      return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+      return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+  };
+
+
+/* Scroll-top and change link state depend. on device  */
+const scrollLink = document.querySelector('.scroll-top__link');
+let headerHeight = document.querySelector('.header').offsetHeight;
+
+
+/* Link state changing */
+if(isMobile.any()) {
+  scrollLink.classList.remove('scroll-top__link--hover');
+  scrollLink.classList.add('scroll-top__link--focus');
+}
+
+
+/* Display arrow */
+window.addEventListener('scroll', () => {
+  if(window.pageYOffset >= headerHeight) {
+    scrollLink.style.display = "block";
+  } else {
+    scrollLink.style.display = "none";
+  }
+});
+
+/* Arrow click func. */
+if(scrollLink) {
+  scrollLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+    });
+    e.blur();
   });
 }

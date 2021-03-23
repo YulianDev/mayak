@@ -9,6 +9,10 @@
     line-height: 24px;
     color: $default;
   }
+
+  body.lock {
+    overflow: hidden;
+  }
   
   .main {
     flex-grow: 1;
@@ -113,6 +117,35 @@
       }
       &:hover {
         color: $accent;
+      }
+    }
+  }
+
+  .scroll-top {
+    &__link {
+      display: none;
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      bottom: 40px;
+      right: 40px;
+      z-index: 100;
+      cursor: pointer;
+      background-image: url('../images/up-arrow.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: .4;
+      transition: opacity .4s;
+    }
+    &__link--hover {
+      &:hover {
+        opacity: 1;
+      }
+    }
+    &__link--focus {
+      &:focus {
+        opacity: 1;
       }
     }
   }

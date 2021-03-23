@@ -17,6 +17,9 @@
                         <img class="logo__img" src="images/logo.jpg" alt="Логотип">
                     </a>
                     <nav class="menu">
+                        <div class="menu__icon">
+                            <span></span>
+                        </div>
                         <ul class="menu__list">
                             <li class="menu__item">
                                 <a class="menu__link" href="index.html">Головна</a>
@@ -25,13 +28,24 @@
                                 <a class="menu__link" href="about.html">Про нас</a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link menu__link--active" href="#">Послуги</a>
+                                <a class="menu__link menu__link--active" href="services.html">Послуги</a>
                             </li>
                             <li class="menu__item">
                                 <a class="menu__link" href="recreation.html">База відпочинку</a>
                             </li>
                             <li class="menu__item">
                                 <a class="menu__link" href="contact.html">Контакти</a>
+                            </li>
+                            <li class="menu__contact">
+                                <h4 class="menu__title">Контакти для зв'язку:</h4>
+                                <div class="menu__info">
+                                    <span>Телефон: </span><a class="menu__info-link" href="tel:+80484341965">+8 048434
+                                        1965</a>
+                                </div>
+                                <div class="menu__info">
+                                    <span>Пошта: </span><a class="menu__info-link"
+                                        href="mailto:mayakcoop@gmail.com">mayakcoop@gmail.com</a>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -48,6 +62,9 @@
         </div>
     </header>
     <main class="main">
+        <div class="scroll-top">
+            <a href="#" class="scroll-top__link scroll-top__link--hover"></a>
+        </div>
         <div class="breadcrumbs">
             <div class="container">
                 <div class="breadcrumbs__inner">
@@ -76,60 +93,94 @@
                     <h1 class="services__title main-title">Наші послуги</h1>
                     <ul class="services__list">
                         <li class="services__item">
-                            <img class="services__img" src="images/services/rice-icon.svg" alt="Рис">
-                            <h5 class="services__item-title">Вирощування рису</h5>
+                            <div class="services__img-box">
+                                <img class="services__img" src="images/services/rice.jpg" alt="Рис">
+                                <img class="services__img" src="images/services/rice-2.jpg" alt="Рис">
+                            </div>
+                            <div class="services__content">
+                                <h4 class="services__subtitle">Вирощування рису</h4>
+                                <p class="services__descr">Рис дуже вимогливий та чутливий до вологи, тому вирощування рису відбувається переважно на повністю затоплених полях. Тривалість вегетаційного періоду в українських умовах: 95—140 днів</p>
+                            </div>
                         </li>
                         <li class="services__item">
-                            <img class="services__img" src="images/services/plant-icon.svg" alt="Рис">
-                            <h5 class="services__item-title">Вирощування інших однорічних і дворічних культур</h5>
+                            <div class="services__img-box">
+                                <img class="services__img" src="images/services/perennials-2.jpg" alt="Рис">
+                                <img class="services__img" src="images/services/perennials.jpg" alt="Рис">
+                            </div>
+                            <div class="services__content">
+                                <h4 class="services__subtitle">Однорічні та дворічні культури</h4>
+                                <p class="services__descr">Плодоношення триває поспіль декілька років. До таких належать: ревінь, щавель, хрін, спаржа, цибуля-батун, цибуля-шніт, цибуля багатоярусна, цибуля слизун та запашна.</p>
+                            </div>
                         </li>
                         <li class="services__item">
-                            <img class="services__img" src="images/services/cow-icon.svg" alt="Рис">
-                            <h5 class="services__item-title">
-                                Розведення великої рогатої худоби молочних порід
-                            </h5>
+                            <div class="services__img-box">
+                                <img class="services__img" src="images/services/oil-2.jpg" alt="Рис">
+                                <img class="services__img" src="images/services/oil.jpg" alt="Рис">
+                            </div>
+                            <div class="services__content">
+                                <h4 class="services__subtitle">Виробництво олії та тваринних жирів</h4>
+                                <p class="services__descr">Тваринні жири, як і рослинні, мають високу енергетичну цінність. Багато тваринних жирів споживається прямо або побічно, як інгредієнти у продуктах харчування, у складі рослинно-тваринних саломасів — у вигляді так званих «кулінарних» чи «кондитерських жирів», як наповнювач у м'ясних виробах.</p>
+                            </div>
                         </li>
                         <li class="services__item">
-                            <img class="services__img" src="images/services/horse-icon.svg" alt="Рис">
-                            <h5 class="services__item-title">
-                                Розведення коней та інших тварин родини конячих
-                            </h5>
+                            <div class="services__img-box">
+                                <img class="services__img" src="images/services/vrh-2.jpg" alt="Рис">
+                                <img class="services__img" src="images/services/vrh.jpg" alt="Рис">
+                            </div>
+                            <div class="services__content">
+                                <h4 class="services__subtitle">Розведення великої рогатої худоби молочних порід</h4>
+                                <p class="services__descr">Сегментом тваринництва великої рогатої худоби є розведення корів. М'ясна складова цього бізнесу - виробництво яловичини - це додатковий продукт тваринництва, що має основний пріоритет в молочному напрямі.</p>
+                            </div>
                         </li>
                         <li class="services__item">
-                            <img class="services__img" src="images/services/pig-icon.svg" alt="Рис">
-                            <h5 class="services__item-title">
-                                Розведення свиней
-                            </h5>
+                            <div class="services__img-box">
+                                <img class="services__img" src="images/services/horses-2.jpg" alt="Рис">
+                                <img class="services__img" src="images/services/horses.jpg" alt="Рис">
+                            </div>
+                            <div class="services__content">
+                                <h4 class="services__subtitle">Розведення коней та інших тварин родини конячих</h4>
+                                <p class="services__descr">Розведення коней - це кропітка і складний процес. Коней вирощують для подальшого перепродажу, отримання м'ясо-молочної продукції, для сільськогосподарських робіт.</p>
+                            </div>
                         </li>
                         <li class="services__item">
-                            <img class="services__img" src="images/services/activity-icon.svg" alt="Рис">
-                            <h5 class="services__item-title">
-                                Допоміжна діяльність у рослинництві і тваринництві
-                            </h5>
+                            <div class="services__img-box">
+                                <img class="services__img" src="images/services/pig-2.jpg" alt="Рис">
+                                <img class="services__img" src="images/services/pig.jpg" alt="Рис">
+                            </div>
+                            <div class="services__content">
+                                <h4 class="services__subtitle">Розведення свиней</h4>
+                                <p class="services__descr">Свинина на ринку м’ясної продукції користується великою популярністю: вона в міру жирна і калорійна, дешевше яловичини, містить корисні речовини для людського організму.</p>
+                            </div>
                         </li>
                         <li class="services__item">
-                            <img class="services__img" src="images/services/bread-icon.svg" alt="Рис">
-                            <h5 class="services__item-title">
-                                Виробництво хліба та хлібобулочних виробів
-                            </h5>
+                            <div class="services__img-box">
+                                <img class="services__img" src="images/services/support-2.jpg" alt="Рис">
+                                <img class="services__img" src="images/services/support.jpg" alt="Рис">
+                            </div>
+                            <div class="services__content">
+                                <h4 class="services__subtitle">Допоміжна діяльність у рослинництві і тваринництві</h4>
+                                <p class="services__descr">Допоміжні види сільськогосподарської діяльності, подібні до сільськогосподарських, але не спрямовані на виробництво продукції (збирання сільськогосподарської продукції). Післяурожайну діяльність, спрямовану на підготовку сільськогосподарської продукції до первісної реалізації.</p>
+                            </div>
                         </li>
                         <li class="services__item">
-                            <img class="services__img" src="images/services/meat-icon.svg" alt="Рис">
-                            <h5 class="services__item-title">
-                                Виробництво м'яса
-                            </h5>
+                            <div class="services__img-box">
+                                <img class="services__img" src="images/services/bread-2.jpg" alt="Рис">
+                                <img class="services__img" src="images/services/bread.jpg" alt="Рис">
+                            </div>
+                            <div class="services__content">
+                                <h4 class="services__subtitle">Виробництво хліба та хлібобулочних виробів</h4>
+                                <p class="services__descr">Промислове вироблення продукту, випеченого з тіста, приготованого за відповідними рецептурами та технологічними режимами. До таких відноситься: хліб, булочні, здобні, дієтичні, сухарні і бубликові вироби з основної та додаткової хлібопекарської сировини.</p>
+                            </div>
                         </li>
                         <li class="services__item">
-                            <img class="services__img" src="images/services/process-icon.svg" alt="Рис">
-                            <h5 class="services__item-title">
-                                Післяурожайна діяльність
-                            </h5>
-                        </li>
-                        <li class="services__item">
-                            <img class="services__img" src="images/services/cross-icon.svg" alt="Рис">
-                            <h5 class="services__item-title">
-                                Оброблення насіння для відтворення
-                            </h5>
+                            <div class="services__img-box">
+                                <img class="services__img" src="images/services/vehicles-2.jpg" alt="Рис">
+                                <img class="services__img" src="images/services/vehicles.jpg" alt="Рис">
+                            </div>
+                            <div class="services__content">
+                                <h4 class="services__subtitle">Вантажний автомобільний транспорт</h4>
+                                <p class="services__descr">Здійснюємо усі види перевезень вантажним автомобільним транспортом. Надаємо послуги оренди вантажних автомобілів з водієм, надання послуг водія без власного вантажного автотранспортного засобу</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -157,24 +208,26 @@
                     <ul class="footer__list">
                         <li class="footer__item">
                             <div class="footer__item-title">Адреса:</div>
-                            <div class="footer__item-info">Одеська обл., Кілійський район, місто Кілія, ВУЛИЦЯ КИЇВСЬКА, будинок 71</div>
+                            <div class="footer__item-info">Одеська обл., Кілійський район, місто Кілія, ВУЛИЦЯ КИЇВСЬКА,
+                                будинок 71</div>
                         </li>
                         <li class="footer__item">
                             <div class="footer__item-title">Гарфік:</div>
                             <div class="footer__item-info">Понеділок - П'ятниця <br>
-                            <span class="footer__item-schedule">з 8:30 до 17:00</span></div>
+                                <span class="footer__item-schedule">з 8:30 до 17:00</span>
+                            </div>
                         </li>
                         <li class="footer__item">
                             <div class="footer__item-title">Телефон:</div>
                             <div class="footer__item-info"><a class="footer__phone" href="tel:+80484341965">
-                                +8 048434 1965
-                            </a></div>
+                                    +8 048434 1965
+                                </a></div>
                         </li>
                         <li class="footer__item">
                             <div class="footer__item-title">Пошта:</div>
                             <div class="footer__item-info"><a class="footer__mail" href="mailto:mayakcoop@gmail.com">
-                                mayakcoop@gmail.com
-                            </a></div>
+                                    mayakcoop@gmail.com
+                                </a></div>
                         </li>
                     </ul>
                 </div>

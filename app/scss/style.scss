@@ -33,6 +33,14 @@
 }
 
 .menu {
+    &__icon {
+        display: none;
+    }
+    &__img {
+        width: 25px;
+        height: 25px;
+        object-fit: cover;
+    }
     &__list {
         display: flex;
     }
@@ -47,15 +55,41 @@
         color: #fff;
         background-color: $accent;
     }
+    &__contact {
+        display: none;
+        color: $title;
+    }
+    &__info {
+        display: flex;
+    }
+    &__title {
+        font-size: 1.5em;
+        @extend %muli-700;
+        margin-bottom: 15px;  
+    }
+    &__info-link {
+        color: $accent;
+    }
+    & span {
+        display: block;
+        width: 100px;
+    }
+    
 }
 
 .header-top {
     border-top: 5px solid $accent;
+    background-color: #fff;
+    position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
     &__inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #fff;
     }
     &__phone {
         display: block;
@@ -91,7 +125,7 @@
 
 .header-banner {
         width: 100%;
-        min-height: calc(100vh - 79px);
+        min-height: 100vh;
         display: flex;
         align-items: center;
         background-image: url('../images/header/1.jpg');
@@ -178,6 +212,9 @@
         max-width: calc(100% / 3);
         width: 100%;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    &__item-title {
+        text-align: center;
     }
     &__img {
         width: 100%;
@@ -349,24 +386,56 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 20px;
+        justify-content: space-evenly;
+        gap: 30px;
     }
     &__item {
-        max-width: calc((100% / 5) - 40px);
-        padding: 20px;
+        max-width: 300px;
+        width: 100%;
+        overflow: hidden;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        cursor: pointer;
+        &:hover {
+            .services__img {
+                transform: translateX(0);
+            }
+            .services__descr{
+                transform: translateX(-100%);
+            }
+            .services__subtitle {
+                transform: translateX(-120%);
+            }
+        }
+    }
+    &__img-box {
+        display: flex;
     }
     &__img {
-        width: 80px;
-        height: 80px;
+        min-width: 100%;
+        height: 180px;
         object-fit: cover;
-        margin: 0 auto;
+        cursor: pointer;
+        transition: all 1s;
+        transform: translateX(-100%);
     }
-    &__item-title {
-        margin: 10px auto;
-        font-size: 1.2em;
-        color: $title;
+    &__content {
+        display: flex;
+        padding: 25px;
+        height: 100%;
+    }
+    &__subtitle,
+    &__descr {
+        min-width: 100%;
+        transition: all 1s;
+    }
+    &__descr {
+        transform: translateX(20%);
+    }
+    &__subtitle {
+        font-size: 1.5em;
+        color: $accent;
         text-align: center;
+        margin-top: 25px;
     }
 }
 
@@ -411,9 +480,8 @@
         &::before {
             content: '';
             position: absolute;
-            top: 50%;
+            top: 10px;
             left: 0;
-            transform: translateY(-50%);
             width: 15px;
             height: 15px;
             background-image: url('../images/point-icon.svg');
@@ -424,7 +492,7 @@
         }
     }
     &__rent-rooms {
-       max-width: calc(100%/2.5);
+       max-width: 350px;
        width: 100%;
        display: flex;
        flex-direction: column;
@@ -448,7 +516,7 @@
         left: -400%;
     }
     &__tab-card--active {
-        left: 95px;
+        left: 25px;
     }
     &__tab-card--scroll {
         left: 400%;
@@ -541,11 +609,12 @@
         justify-content: space-between;
     }
     &__entertainment-text {
-        padding-top: 15px;
+        padding: 15px 15px 0 0;
         max-width: 700px;
     }
     &__entertainment-img {
-        width: 400px;
+        min-width: 400px;
+        width: 100%;
         height: 225px;
         object-fit: cover;
     }
@@ -580,6 +649,7 @@
         max-width: 520px;
         width: 100%;
         height: 600px;
+        margin-left: 10px;
     }
     &__contact-box {
         margin: 0 auto;
@@ -648,7 +718,7 @@
 /* Contact-box form */
 .contact-box {
     background-color: #252020;
-    width: 550px;
+    max-width: 550px;
     height: 550px;
     border-radius: 50%;
     padding: 105px;

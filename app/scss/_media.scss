@@ -1,0 +1,396 @@
+@media (max-width: 1300px) {
+
+    .scroll-top__link {
+        right: 30px;
+        bottom: 30px;
+    }
+     /* Index page */
+    .activity {
+        .slick-arrow {
+            top: 105%;
+        }
+        .slick-next {
+            right: 45%;
+        }
+        .slick-prev {
+            left: 45%;
+        }
+        &__link {
+            margin-top: 85px;
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .scroll-top__link {
+        right: 25px;
+        bottom: 25px;
+    }
+    /* Header and Navigation */
+    .menu {
+        &__link {
+            padding: 25px 10px;
+        }
+    }
+
+     /* Index page */
+    
+    .activity {
+        .slick-next {
+            right: 35%;
+        }
+        .slick-prev {
+            left: 35%;
+        }
+    }
+    .rest {
+        &__list {
+            display: block;
+        }
+        &__item {
+            max-width: calc(100% / 2);
+            margin: 0 auto 35px;
+        }
+    }
+
+    /* About page */
+    .about {
+        &__info {
+            flex-direction: column-reverse;
+        }
+        &__info-img {
+            width: 100%;
+            margin: 0 0 20px;
+        }
+        &__descr {
+            max-width: 100%;
+        }
+    }
+
+    /* Recreation page */
+    .recreation {
+        &__about {
+            flex-direction: column-reverse;
+        }
+        &__city-img {
+            width: 100%;
+            height: 330px;
+            margin: 0 0 20px;
+        }
+        &__text {
+            max-width: 100%;
+        }
+        &__entertainment-img {
+            min-width: 330px;
+        }
+        &__location-content {
+           display: block; 
+        }
+        &__location-list {
+            max-width: 100%;
+        }
+        &__location-map {
+            max-width: 100%;
+            height: 400px;
+            margin-left: 0;
+        }
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    
+    section {
+        padding: 50px 0;
+    }
+
+    .scroll-top__link {
+        right: 16px;
+        bottom: 16px;
+    }
+
+    /* Header and Navigation */
+    .header-top {
+        &__inner {
+            flex-direction: row-reverse;
+        }
+        &__phone {
+            display: none;
+        }
+       
+    }
+    .menu {
+        &__icon {
+            display: block;
+            z-index: 5;
+            position: relative;
+            cursor: pointer;
+            width: 30px;
+            height: 18px;
+            &::before,
+            &::after, 
+            & span {
+                left: 0;
+                position: absolute;
+                height: 10%;
+                width: 100%;
+                transition: all .3s;
+                background-color: #111;
+            }
+            &::before,
+            &::after {
+                content: '';
+            }
+            &::before {
+                top: 0;
+            }
+            &::after {
+                bottom: 0;
+            }
+            & span {
+                top: 50%;
+                transform: scale(1) translateY(-50%);
+            }
+        } 
+        &__icon--active {
+            span {
+                transform: scale(0);
+            }
+            &::before {
+                top: 50%;
+                transform: rotate(-45deg) translateY(-50%);
+            }
+            &::after {
+                bottom: 50%;
+                transform: rotate(45deg) translateY(50%);
+            }
+        }
+        &__list {
+            position: fixed;
+            flex-direction: column;
+            top: 55px;
+            left: -100%;
+            width: 80%;
+            min-height: calc(100vh - 55px);
+            background-color: #fff;
+            transition: left .4s;
+            z-index: 10;
+        }
+        &__list--active {
+            left: 0;
+        }
+        &__contact {
+            margin-top: auto;
+            display: block;
+            padding: 25px 10px;
+            background-color: #d9d9d9;
+        }
+    }
+
+     /* Index page */
+    .main-info {
+        &__img {
+            width: 200px;
+            height: 120px;
+        }
+    }
+
+    /* Recreation page */
+    .recreation {
+        &__rent {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__rent-info {
+            padding-top: 0;
+            margin-bottom: 40px;
+        }
+        &__rent-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &__rent-title,
+        &__entertainment-subtitle {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        &__rent-item {
+            max-width: calc(100% / 2);
+            width: 100%;
+        }
+        &__entertainment-content {
+            display: block;
+        }
+        &__entertainment-text {
+            padding: 0 0 15px;
+        }
+        &__location-subtitle {
+            margin-bottom: 10px;
+        }
+    }
+
+    /* Contact page */
+    .contact {
+        &__content {
+            display: block;
+            margin-bottom: 40px;
+        }
+        &__map {
+            width: 100%;
+        }
+    }
+
+    /* Contact-box block */
+    .contact-box {
+        max-width: 420px;
+        height: 420px;
+        padding: 60px;
+        &__input, 
+        &__textarea {
+            margin: 5px 0;
+        }
+        &__btn {
+            margin: 20px auto 0;
+        }
+    }
+
+
+    /* Footer */
+    .footer {
+        &__inner {
+            display: block;
+        }
+        &__info, 
+        &__contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__contact {
+            margin-top: 25px;
+            max-width: 100%;
+        }
+        &__title {
+            margin-bottom: 10px;
+        }
+        &__text {
+            display: none;
+        }
+        &__item-title {
+            width: 100px;
+        }
+        &__item-info {
+            max-width: 100%;
+        } 
+    }
+}
+
+@media (max-width: 630px) {
+
+    .main-title {
+        font-size: 1.8em;
+        line-height: 1.8em;
+        letter-spacing: 0.02rem;
+        padding-bottom: 30px;
+    }
+    .title {
+        font-size: 1.6em;
+        line-height: 1.6em;
+        padding-bottom: 20px;
+    }
+
+     /* Index page */
+     .main-info {
+         &__descr {
+             display: block;
+         }
+         &__img {
+             margin: 20px auto;
+         }
+     }
+     .rest {
+         &__item {
+             max-width: 300px;
+         }
+     }
+
+
+     /* About page*/
+     .about {
+         &__general-box {
+             display: block;
+         }
+         &__list {
+             max-width: 100%;
+             text-align: center;
+         }
+         ul.about__list {
+             margin-bottom: 25px;
+         }
+     }    
+     
+     /* Recreation page */
+    .recreation {
+        &__rent-title,
+        &__entertainment-subtitle,
+        &__location-subtitle {
+            font-size: 1.3em;
+        }
+    }
+
+}
+
+@media (max-width: 500px) {
+    /* Contact-box block */
+    .contact-box {
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    .activity {
+        .slick-next {
+            right: 25%;
+        }
+        .slick-prev {
+            left: 25%;
+        }
+    }
+
+    /* About page */
+    .about {
+        &__info-img {
+            height: 200px;
+        }
+    }
+
+     /* Recreation page */
+     .recreation { 
+         &__tab-card {
+            width: 90%;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+         }
+         &__tab-card--active {
+            left: 50%;
+            transform: translateX(-50%);
+         }
+         &__entertainment-img {
+             min-width: auto;
+             height: 180px;
+         }
+         &__rent-item {
+             max-width: 100%;
+         }
+     }
+
+     /* Contact-box block */
+    .contact-box {
+        padding: 30px;
+        &__btn {
+            margin: 35px auto 0;
+            width: 160px;
+        }
+    }
+
+}
